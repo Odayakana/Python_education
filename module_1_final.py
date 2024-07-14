@@ -7,7 +7,7 @@ students_list.sort()
 total_grades_dict = {}
 
 for i in range(len(students_list)):
-  gade = sum(grades[i]) / len(grades[i])
-  total_grades_dict[students_list[i]] = gade
+    grade = sum(grades[i]) / len(grades[i])
+    total_grades_dict[students_list[i]] = grade
 
 print(total_grades_dict)
