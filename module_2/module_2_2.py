@@ -2,7 +2,7 @@ first = int(input('Введите первое число: '))
 second = int(input('Введите второе число: '))
 third = int(input('Введите третье число: '))
 
-print('Решение 1:')
+print('\nРешение 1:')
 num_set = set()
 num_set.add(first)
 num_set.add(second)
@@ -15,7 +15,7 @@ elif len(num_set) == 2:
 else:
     print(0)
 
-print('Решение 2:')
+print('\nРешение 2:')
 if first == second and second == third:
     print(3)
 elif first == second or second == third or third == first:
@@ -23,4 +23,3 @@ elif first == second or second == third or third == first:
 else:
     print(0)
 
-    
