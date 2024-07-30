@@ -9,6 +9,6 @@ def get_pass(value):
     return result
 
 
-for i in range(1, 21):
+for i in range(3, 21):
     result_pass = get_pass(i)
     print(f'{i} - {result_pass}')
