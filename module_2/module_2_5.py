@@ -10,10 +10,7 @@ def get_matrix(n, m, value):
 
             matrix.append(l_list)
 
-        return matrix
-
-    else:
-        return 'Error'
+    return matrix
 
 
 result1 = get_matrix(2, 2, 10)
