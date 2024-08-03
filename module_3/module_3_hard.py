@@ -13,15 +13,9 @@ def calculate_structure_sum(data):
     str_ = str_.split()
     total = 0
     for i in str_:
-        is_int = True
         try:
-            int(i)
-        except ValueError:
-            is_int = False
-
-        if is_int:
             total += int(i)
-        else:
+        except ValueError:
             total += len(i)
 
             # 'Urban2' - двойку в строке можно посчитать ниже, но решение будет 100 а не 99
@@ -29,17 +23,42 @@ def calculate_structure_sum(data):
             # for j in i:
             #     is_int = True
             #     try:
-            #         int(j)
-            #     except ValueError:
-            #         is_int = False
-            #
-            #     if is_int:
             #         total += int(j)
-            #     else:
+            #     except ValueError:
             #         total += 1
+
+    return total
+
+
+def calculate_structure_sum_v2(data):
+    total = 0
+    if type(data) == list:
+        for i in data:
+            total += calculate_structure_sum_v2(i)
+
+    if type(data) == tuple:
+        for i in data:
+            total += calculate_structure_sum_v2(i)
+
+    if type(data) == set:
+        total += calculate_structure_sum_v2(list(data))
+
+    if type(data) == dict:
+        for key, value in data.items():
+            total += calculate_structure_sum_v2(key) + calculate_structure_sum_v2(value)
+
+    if type(data) == str:
+        return len(data)
+
+    if type(data) == int:
+        return data
 
     return total
 
 
 result = calculate_structure_sum(data_structure)
 print(result)
+
+result = calculate_structure_sum_v2(data_structure)
+print(result)
+
