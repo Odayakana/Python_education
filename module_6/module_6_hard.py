@@ -88,7 +88,7 @@ class Circle(Figure):
 
 class Triangle(Figure):
     sides_count = 3
-    impossible_sizes = False
+    # impossible_sizes = False
 
     def __init__(self, color: tuple, *sides):
         super().__init__(color, *sides)
